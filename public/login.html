@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yngo: website audit and auto-fix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="welcome">
+    <section class="welcome-intro">
+        <a class="logo" href="/login.html"><span class="logo-mark">Y</span>Yngo</a>
+        <h1>Find what slows your website down, and fix it.</h1>
+        <p class="lead">Audit any website or React project. Get scores for every page, clear fixes, and automatic code changes you approve first.</p>
+        <ul class="feature-list">
+            <li><span class="feature-icon">⚡</span><div><b>Lighthouse + SEO checks</b>Performance, accessibility, best practices and SEO for every page.</div></li>
+            <li><span class="feature-icon">📁</span><div><b>Websites, HTML and React projects</b>Paste a URL, or choose a project folder on your computer.</div></li>
+            <li><span class="feature-icon">🛠️</span><div><b>Auto-fix with a preview</b>See every change as a diff before anything is written. Undo anytime.</div></li>
+        </ul>
+    </section>
+
+    <section class="welcome-form">
+        <div class="login-box">
+            <div class="card">
+                <h2 id="form-title">Welcome back</h2>
+                <p class="muted" id="form-subtitle" style="margin-bottom: 18px">Log in to see your audits.</p>
+
+                <div class="segmented" style="width: 100%">
+                    <button type="button" id="login-tab" class="active" style="flex: 1">Log in</button>
+                    <button type="button" id="register-tab" style="flex: 1">Create account</button>
+                </div>
+
+                <form id="login-form">
+                    <label class="field">Email
+                        <input name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+                    </label>
+                    <label class="field">Password
+                        <input name="password" type="password" placeholder="8+ characters" autocomplete="current-password" required>
+                    </label>
+                    <button type="submit" id="submit-button" class="big">Log in</button>
+                </form>
+                <p id="login-message" class="message"></p>
+
+                <div class="or-line">or</div>
+
+                <button type="button" class="secondary big guest-button" id="guest-button">Continue as guest, no sign-up</button>
+                <p class="muted" style="text-align: center; margin: 10px 0 0">Start auditing right away. Create an account later to keep your audits.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="common.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

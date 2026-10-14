@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yngo: audit report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="app-header"></header>
+<main>
+    <p style="margin-bottom: 14px"><a href="/" class="muted">‹ All audits</a></p>
+
+    <section class="card" id="audit-summary">
+        <p class="muted">Loading...</p>
+    </section>
+
+    <section class="card" id="report-card" hidden>
+        <div class="card-head">
+            <h2>Problems found</h2>
+            <span class="muted" id="issue-count"></span>
+        </div>
+
+        <div class="page-tabs" id="page-tabs"></div>
+
+        <div class="toolbar">
+            <div class="chips" id="category-chips"></div>
+        </div>
+        <div class="toolbar">
+            <div class="chips" id="severity-chips"></div>
+            <input type="search" id="issue-search" placeholder="Search problems...">
+        </div>
+
+        <div id="page-note"></div>
+        <div id="issue-list"></div>
+    </section>
+</main>
+<script src="common.js"></script>
+<script src="audit.js"></script>
+</body>
+</html>

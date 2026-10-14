@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yngo: audits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="app-header"></header>
+<main>
+    <section class="card hero-card">
+        <h1>What do you want to audit?</h1>
+        <p class="lead">Yngo checks performance, accessibility, best practices and SEO, then tells you exactly how to fix each problem.</p>
+
+        <div class="segmented" id="audit-tabs">
+            <button type="button" class="active" data-tab="website">🌐 Website URL</button>
+            <button type="button" data-tab="folder" hidden>📁 Project folder (HTML / React)</button>
+        </div>
+
+        <form id="website-form">
+            <div class="input-row">
+                <input name="siteUrl" type="url" class="grow" placeholder="https://your-website.com" required>
+                <select name="maxPages" class="pages-select" title="How many pages to audit"></select>
+                <button type="submit" class="big">Start audit</button>
+            </div>
+            <p class="hint">Running your React app with <code>npm run dev</code>? Audit its local address, for example <code>http://localhost:5173</code>.</p>
+        </form>
+
+        <form id="folder-form" hidden>
+            <div class="input-row">
+                <div class="picked-folder" id="picked-folder" role="button" tabindex="0">
+                    <span class="folder-icon">📁</span>
+                    <div class="folder-text">
+                        <div class="folder-path placeholder" id="picked-folder-path">No folder chosen</div>
+                        <div class="muted" id="picked-folder-info">Click to choose a plain HTML site or a React / Vite / Next.js project</div>
+                    </div>
+                    <span class="button secondary">Browse…</span>
+                </div>
+                <button type="submit" class="big" id="folder-submit" disabled>Start audit</button>
+            </div>
+            <p class="hint">React projects are audited from their build folder (<code>dist</code>, <code>build</code> or <code>out</code>). Run <code>npm run build</code> first.</p>
+        </form>
+
+        <p id="form-message" class="message"></p>
+    </section>
+
+    <section class="card">
+        <div class="card-head">
+            <h2>Your audits</h2>
+            <span class="muted" id="audit-count"></span>
+        </div>
+        <div class="audit-list" id="audit-list">
+            <p class="muted">Loading...</p>
+        </div>
+    </section>
+</main>
+<script src="common.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

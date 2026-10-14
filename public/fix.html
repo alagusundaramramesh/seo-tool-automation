@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yngo: auto-fix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="app-header"></header>
+<main>
+    <section class="card hero-card">
+        <h1>Auto-fix a project</h1>
+        <p class="lead">Works for plain HTML sites and React / Next.js projects.
+           You see every change first. Nothing is changed until you click <b>Apply</b>.</p>
+
+        <div class="segmented" id="source-tabs">
+            <button type="button" data-tab="folder" class="active">📁 Folder on this computer</button>
+            <button type="button" data-tab="zip">🗜️ Upload a .zip</button>
+        </div>
+
+        <form id="fix-form">
+            <div id="folder-input" class="input-row" style="margin-bottom: 16px">
+                <div class="picked-folder" id="picked-folder" role="button" tabindex="0">
+                    <span class="folder-icon">📁</span>
+                    <div class="folder-text">
+                        <div class="folder-path placeholder" id="picked-folder-path">No folder chosen</div>
+                        <div class="muted" id="picked-folder-info">Click to choose your project folder</div>
+                    </div>
+                    <span class="button secondary">Browse…</span>
+                </div>
+            </div>
+
+            <div id="zip-input" hidden style="margin-bottom: 16px">
+                <input name="projectZip" type="file" accept=".zip">
+                <p class="hint" id="zip-help"></p>
+            </div>
+
+            <div class="input-row" style="margin-bottom: 18px">
+                <label class="field grow">Only fix problems from this audit (optional)
+                    <select name="auditId"><option value="">Fix everything Yngo can fix</option></select>
+                </label>
+                <label class="field grow">Live site address, for canonical links (optional)
+                    <input name="siteUrl" type="url" placeholder="https://my-shop.com">
+                </label>
+            </div>
+
+            <button type="submit" class="big">Check my project</button>
+        </form>
+        <p id="fix-message" class="message"></p>
+    </section>
+
+    <section class="card">
+        <div class="card-head"><h2>Your fixes</h2></div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Project</th><th>Status</th><th>Files to change</th><th>To review</th><th>Created</th></tr></thead>
+                <tbody id="fix-rows"><tr><td colspan="5" class="muted">Loading...</td></tr></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<script src="common.js"></script>
+<script src="fix.js"></script>
+</body>
+</html>

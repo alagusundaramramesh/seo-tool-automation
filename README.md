@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Yngo: website audit + auto-fix
 
 A web app that audits websites like Chrome DevTools / Lighthouse, scores every page,
@@ -209,3 +210,7 @@ All `/api/audits`, `/api/fixes` and `/api/folders` routes need a login (a guest 
 - GitHub integration that opens a pull request with the fixes
 - Team accounts and MongoDB, when there are many users
 - Optional AI-written alt text and meta descriptions (opt-in with an API key)
+=======
+# seo-tool-automation
+This project audit the site gives the lighthouse score then autofix local files if we gives apply.
+>>>>>>> fd32e5fedd7e0bbdc5dd04d97f05ba6bde4dae6a
